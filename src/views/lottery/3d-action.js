@@ -5,6 +5,7 @@ import { setCardDist } from './3d-calc-distance.js';
 function cardFlyAnimation(cardIndexList) {
   return new Promise((resolve, reject) => {
     const selectObject = [];
+    console.log('cardIndexList', cardIndexList);
     cardIndexList.forEach((item, index) => {
       selectObject.push(objects[item]);
     });

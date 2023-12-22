@@ -33,7 +33,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/views/lottery/lottery-3d.js"  ],
   "exclude": [
     "node_modules"
   ]

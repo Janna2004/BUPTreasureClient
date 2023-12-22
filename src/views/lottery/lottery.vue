@@ -1,12 +1,17 @@
 <template>
   <div class="lottery-wrap">
-    <lotteryStarfield/>
-    <LotteryMusic/>
     <header class="lottery-header">
       <span>{{ headerTitle }}</span>
     </header>
     <div class="lottery-content">
-      <Prize/>
+      <div class="left-side">
+      <div class="placeholder"></div>
+        <div class="content-title">
+          <p class="first-title">邮奖</p>
+          <p class="second-title">总是邮人抽到奖</p>
+        </div>
+        <Prize/>
+      </div>
       <Lottery3d/>
     </div>
   </div>
@@ -19,23 +24,65 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  background-image: url("../../assets/backgrand.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 .lottery-header {
   flex: none;
   height: 50px;
   width: 100%;
-  background-color: hsla(0,0%,100%,.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: lightseagreen;
+  color: rgba(255, 255, 255, 0.696);
   font-size: 26px;
+  letter-spacing: 5px;
   font-weight: bold;
   //position: fixed;
 }
 .lottery-content {
+  height: 100%;
   flex: 1;
   display: flex;
+  
+}
+.content-title {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff;
+  text-align: left;
+  margin: 30px;
+  letter-spacing: 8px;
+  p {
+    margin-bottom: 35px;
+  }
+}
+.left-side{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-bottom: 70px;
+}
+.placeholder {
+    height: 30%;
+    width: 100%;
+  }
+.first-title {
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+  font-style: italic;
+}
+.second-title {
+  font-size: 30px;
+  color: #fff;
 }
 </style>
 
@@ -43,13 +90,11 @@
 import { Component, Vue } from "vue-property-decorator";
 import Lottery3d from './lottery-3d.vue';
 import Prize from './lottery-prize.vue';
-import LotteryMusic from './lottery-music.vue';
-import lotteryStarfield from './lottery-starfield.vue';
 import lotteryConfig from './lottery-config.js';
 
 @Component({
   components: {
-    Lottery3d, Prize, LotteryMusic, lotteryStarfield
+    Lottery3d, Prize
   }
 })
 export default class Lottery extends Vue {

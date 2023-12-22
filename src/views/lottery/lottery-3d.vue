@@ -6,8 +6,9 @@
 
 <style lang="scss" scoped>
 .lottery-3d-wrap {
-  height: 100%;
-  width: 100%;
+  flex:4;
+  margin-right: 20px;
+  margin-right: 0;
 }
 #container {
   height: 100%;

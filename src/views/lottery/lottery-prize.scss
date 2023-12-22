@@ -1,36 +1,41 @@
 .prize-wrap {
   height: 100%;
-  width: 10vw;
+  flex:1;
   min-width: 300px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .prize-list {
-  //height: 100%;
-  flex: 1;
+  height: 20%;
+  //flex: 3;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
+
 .prize-item {
   padding: 10px;
   display: flex;
-  align-items: center;
-  border-radius: 4px;
-  flex-wrap: nowrap;
-  background-color: rgba(0, 127, 127, 0.37);
-  border: 1px solid rgba(127, 255, 255, 0.25);
-  color: rgba(127, 255, 255, 0.75);
+  border-radius: 30px;
+  //flex-wrap: nowrap;
+  background-color: #8778e6;
+  color: rgba(255, 255, 255, 0.75);
   width: 80%;
-  height: 80px;
+  height: 70px;
+  margin-left: 18px;  // 左边距
+  margin-right: 18px; // 右边距
   box-sizing: border-box;
-  transition: transform 1s ease-in;
+  transition: transform 0.5s ease-in;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  text-align: center; /* 文本居中对齐 */
   cursor: pointer;
   //margin-bottom: 40px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
 
   .prize-item-left {
     width: 60px;
@@ -48,19 +53,22 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
     .prize-item-title {
       font-size: 20px;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 8px;
+      letter-spacing: 3px;
     }
     .prize-item-name {
-
+      font-size: 16px;
+      margin-bottom: 5px;
     }
 
     .prize-item-count {
-
+      font-size: 14px;
+      margin-bottom: 5px;
     }
     .prize-item-count-wrap {
       width: 100%;
@@ -68,7 +76,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      height: 15px;
+      height: 10px;
       .prize-item-count-text {
         width: 100%;
         text-align: center;
@@ -94,7 +102,7 @@
       border-radius: 1.8vh;
       position: relative;
       animation: animate-positive 2s;
-      background-color: #d9534f;
+      background-color: #a638af;
       //height: 1.8vh;
       height: 100%;
       transition: width 0.6s ease;
@@ -137,9 +145,9 @@
   }
 
   &.shine {
-    box-shadow: 0 0 15px 0 rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 15px 0 rgba(156, 177, 248, 0.5);
     transform: scale(1.1);
-    transform-origin: left center;
+    transform-origin: center;
     position: relative;
     overflow: hidden;
   }
@@ -154,7 +162,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #03e9f4);
+    background: linear-gradient(90deg, transparent, #ece8a8ee);
     animation: animate1 1s linear infinite
   }
 
@@ -172,7 +180,7 @@
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, #03e9f4);
+    background: linear-gradient(180deg, transparent, #ece8a8ee);
     animation: animate2 1s linear infinite;
     animation-delay: .25s
   }
@@ -191,7 +199,7 @@
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, #03e9f4);
+    background: linear-gradient(270deg, transparent, #ece8a8ee);
     animation: animate3 1s linear infinite;
     animation-delay: .50s
   }
@@ -210,7 +218,7 @@
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, #03e9f4);
+    background: linear-gradient(360deg, transparent, #ece8a8ee);
     animation: animate4 1s linear infinite;
     animation-delay: .75s
   }

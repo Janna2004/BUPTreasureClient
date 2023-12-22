@@ -13,7 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
   font-family: -apple-system-font, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif;
 }
-html, body {
+html, body{
   height: 100%;
   width: 100%;
 }

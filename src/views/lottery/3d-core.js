@@ -18,7 +18,7 @@ window.objects = objects;
 export const targets = { table: [], sphere: [], helix: [], grid: [] }; // 四个不同状态的位置数据
 // 卡片尺寸
 export const cardSize = {
-  width: 140,
+  width: 150,
   height: 180,
   padding: 20,
 }

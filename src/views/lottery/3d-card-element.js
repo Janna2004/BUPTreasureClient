@@ -14,10 +14,12 @@ const create3DCard = function(_objects = objects) {
     const currentCardData = cardList[i];
     const element = document.createElement( 'div' );
     element.className = 'element';
-    element.dataset.cardId = currentCardData.id; // 卡片唯一ID
-    element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';
+    //element.style.backgroundColor = 'rgba(135,120,230,' + ( Math.random() * 0.25 + 0.1 ) + ')';
     if (cardListWinAllIds.includes(currentCardData.id)) {
       element.classList.add('prize');
+      element.style.backgroundColor = 'rgba(200, 192, 190,' + ( Math.random() * 0.25 + 0.1 ) + ')';
+    }else{
+      element.style.backgroundColor = 'rgba(135,120,230,' + ( Math.random() * 0.25 + 0.1 ) + ')';
     }
 
     const imgEle = document.createElement('img');
@@ -30,10 +32,10 @@ const create3DCard = function(_objects = objects) {
     symbol.textContent = currentCardData.name;
     element.appendChild( symbol );
 
-    const details = document.createElement( 'div' );
-    details.className = 'details';
-    details.innerHTML = currentCardData.id;
-    element.appendChild( details );
+    // const details = document.createElement( 'div' );
+    // details.className = 'details';
+    // details.innerHTML = currentCardData.id;
+    // element.appendChild( details );
 
     const objectCSS = new CSS3DObject( element );
     objectCSS.position.x = Math.random() * 4000 - 2000;
