@@ -44,17 +44,15 @@ const getRandomCard = async function(currentPrize) {
 
     // 将当前奖项中奖人员统计
     currentPrize.cardListWin = [...currentPrize.cardListWin, ...selectCardList];
-    currentPrize.countRemain = currentPrize.countRemain - selectCardList.length;
+    currentPrize.countRemain -= selectCardList.length;
     currentPrize.round += 1;
 
     lotteryConfig.setLocalStorage();
-    console.log('selectCardList', selectCardList);
     return selectCardList;
   } catch (error) {
     console.error('Error fetching winners from backend', error);
     throw error; // 或者处理错误
   }
-
   // const cardListRemainAllCopy = JSON.parse(JSON.stringify(lotteryConfig.cardListRemainAll));
   // const selectCount = currentPrize.countRemain < currentPrize.everyTimeGet ? currentPrize.countRemain : currentPrize.everyTimeGet;
 

@@ -1,4 +1,4 @@
-import lotteryConfigUsersRawJson from './lottery-config-users-raw.json';
+import lotteryConfigUsersRawJson from './lottery-config-users.json';
 
 const cardUserList = lotteryConfigUsersRawJson;
 // table模式下行列数
