@@ -17,7 +17,6 @@ const create3DCard = function(_objects = objects) {
     //element.style.backgroundColor = 'rgba(135,120,230,' + ( Math.random() * 0.25 + 0.1 ) + ')';
     if (cardListWinAllIds.includes(currentCardData.id)) {
       element.classList.add('prize');
-      element.style.backgroundColor = 'rgba(200, 192, 190,' + ( Math.random() * 0.25 + 0.1 ) + ')';
     }else{
       element.style.backgroundColor = 'rgba(135,120,230,' + ( Math.random() * 0.25 + 0.1 ) + ')';
     }

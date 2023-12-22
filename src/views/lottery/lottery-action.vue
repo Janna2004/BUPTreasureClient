@@ -15,7 +15,7 @@
       <div class="menu-item">
         <button id="tableShow" @click="tableShow">展示全部</button>
         <button id="winShow" @click="showAllWinUserPanel = true">展示中奖</button>
-        <button id="reset" @click="resetData">重置所有数据</button>
+        <button id="reset" @click="refreshTable">更新表单</button>
       </div>
       <div style="margin-bottom: 10px;"></div>
     </div>
@@ -168,11 +168,9 @@ export default class Prize extends Vue {
       alert('抽奖正在运行中，请等待后再操作！')
     }
   }
-  resetData () {
-    if (confirm('是否要重置所有抽奖数据，此操作不可恢复！')) {
-      lotteryConfig.clearLocalStorage();
-      location.reload();
-    }
+  async refreshTable () {
+    lotteryConfig.clearLocalStorage();
+    location.reload();
   }
 
   mounted () {
