@@ -12,8 +12,9 @@
   box-shadow: 0 0 12px rgba(253, 105, 0, 0.95);
 }
 .element.prize .symbol {
-  text-shadow: #7c6d36d4;
+  text-shadow: #faf7edd4;
   color: rgba(30, 0, 0, 0.628);
+  text-shadow: 0 0 10px rgba(250, 181, 173, 0.95);
 }
 .element.prize .details {
   text-shadow: none;
