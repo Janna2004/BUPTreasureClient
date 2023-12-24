@@ -44,7 +44,7 @@ const lotteryConfig = {
       round: 0
     }
   ], // 奖品列表
-  headerTitle: '北京邮电大学第七届信息科技国际青年学者传邮论坛',
+  headerTitle: null,//'北京邮电大学第七届信息科技国际青年学者传邮论坛',
   currentPrize: null, // 当前抽奖的奖品
   colCount, rowCount, // table模式下行列数
   cardList, // 所有卡片的数据

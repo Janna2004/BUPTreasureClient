@@ -8,7 +8,7 @@
 .lottery-3d-wrap {
   flex:4;
   margin-right: 20px;
-  margin-right: 0;
+  margin-top: 25px;
 }
 #container {
   height: 100%;

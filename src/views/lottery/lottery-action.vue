@@ -200,13 +200,13 @@ button {
   border-radius: 5px;
   font-weight: bold;
   letter-spacing: 2px;
-  border: 1px solid #8778e6;
-  background-color: rgba(0, 0, 0, 0.454);
-  color: #ffffffd8;
+  border: 1px solid rgb(230, 120, 120);
+  background-color: #950101bf;
+  color: #ffffff;
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #fab994cb;
   }
 }
 
@@ -214,7 +214,7 @@ button {
   height: 100px;
   font-size: 40px;
   letter-spacing: 10px;
-  background-color: rgba(0, 0, 0, 0.454);
+  background-color: #950101bf;
 }
 
 .menu-lottery {
@@ -242,7 +242,10 @@ button {
 }
 
 #menu {
-  background-image: url("../../assets/menu-backgrand.png");
+  //background-image: url("../../assets/menu-backgrand.png");
+  background-color: #ee4b46c7;
+  border-color: #ea8d1c;
+  border-radius: 1px;
   width: 600px;
   height: 200px;
   padding-right: 50px;

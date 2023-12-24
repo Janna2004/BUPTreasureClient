@@ -18,7 +18,7 @@ const create3DCard = function(_objects = objects) {
     if (cardListWinAllIds.includes(currentCardData.id)) {
       element.classList.add('prize');
     }else{
-      element.style.backgroundColor = 'rgba(135,120,230,' + ( Math.random() * 0.25 + 0.1 ) + ')';
+      element.style.backgroundColor = 'rgba(254, 247, 219,' + ( Math.random() * 0.25 + 0.2 ) + ')';
     }
 
     const imgEle = document.createElement('img');

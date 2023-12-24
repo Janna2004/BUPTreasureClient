@@ -20,8 +20,8 @@
   display: flex;
   border-radius: 30px;
   //flex-wrap: nowrap;
-  background-color: #8778e6;
-  color: rgba(255, 255, 255, 0.75);
+  background-color: #ee4b46;
+  color: rgb(255, 255, 255);
   width: 80%;
   height: 70px;
   margin-left: 10px;  // 左边距
@@ -103,7 +103,7 @@
       border-radius: 1.8vh;
       position: relative;
       animation: animate-positive 2s;
-      background-color: #a638af;
+      background-color: #a60e0b;
       //height: 1.8vh;
       height: 100%;
       transition: width 0.6s ease;
@@ -146,7 +146,9 @@
   }
 
   &.shine {
-    box-shadow: 0 0 15px 0 rgba(156, 177, 248, 0.5);
+    color: #ffffff;
+    background-color: #fab994;
+    box-shadow: 0 0 15px 0 #fef2ccdd;
     transform: scale(1.1);
     transform-origin: center;
     position: relative;

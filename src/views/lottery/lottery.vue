@@ -57,7 +57,6 @@
   color: #fff;
   text-align: left;
   margin: 30px;
-  letter-spacing: 8px;
   p {
     margin-bottom: 35px;
   }
@@ -75,14 +74,17 @@
     width: 100%;
   }
 .first-title {
-  font-size: 60px;
+  font-size: 90px;
+  height: 50px;
   font-weight: bold;
   color: #fff;
-  font-style: italic;
+  //font-style: italic;
+  letter-spacing: 15px;
 }
 .second-title {
-  font-size: 30px;
+  font-size: 50px;
   color: #fff;
+  letter-spacing: 8px;
 }
 </style>
 
