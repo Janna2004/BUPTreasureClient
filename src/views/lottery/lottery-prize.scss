@@ -24,8 +24,8 @@
   color: rgba(255, 255, 255, 0.75);
   width: 80%;
   height: 70px;
-  margin-left: 18px;  // 左边距
-  margin-right: 18px; // 右边距
+  margin-left: 10px;  // 左边距
+  margin-right: 10px; // 右边距
   box-sizing: border-box;
   transition: transform 0.5s ease-in;
   justify-content: center; /* 水平居中 */
@@ -33,19 +33,20 @@
   text-align: center; /* 文本居中对齐 */
   cursor: pointer;
   //margin-bottom: 40px;
-  // &:last-child {
-  //   margin-bottom: 0;
-  // }
-
-  .prize-item-left {
-    width: 60px;
-    margin-right: 10px;
-
-    img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: block;
+  &:last-child {
+    width: 40%;
+    margin-bottom: 0;
+    .progress {
+      display: none;
+    }
+    .prize-item-count-text {
+      display: none;
+    }
+    .prize-item-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 15px;
+      letter-spacing: 3px;
     }
   }
 
@@ -214,8 +215,8 @@
   }
 
   &.shine span.line-4 {
-    bottom: -100%;
-    left: 0;
+    bottom: 0;
+    right: -100%;
     width: 2px;
     height: 100%;
     background: linear-gradient(360deg, transparent, #ece8a8ee);

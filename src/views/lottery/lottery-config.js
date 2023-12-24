@@ -3,38 +3,48 @@ import { cardList, colCount, rowCount } from './lottery-config-users.js';
 const lotteryConfig = {
   prizeList: [
     {
-      count: 3, // 总数量
-      countRemain: 3,
-      everyTimeGet: 2,
+      count: 5, // 总数量
+      countRemain: 5,
+      everyTimeGet: 3,
       name: "一等奖",
       detail: "一等奖商品",
-      img: "",
-      id: '一等奖',
+      // img: "",
+      id: 1,
       cardListWin: [],
       round: 0
     },
     {
-      count: 5,
-      countRemain: 5,
-      everyTimeGet: 3,
+      count: 10,
+      countRemain: 10,
+      everyTimeGet: 5,
       name: "二等奖",
       detail: "二等奖商品",
-      id: '二等奖',
+      id: 2,
       cardListWin: [],
       round: 0
     },
     {
-      count: 5,
-      countRemain: 5,
-      everyTimeGet: 3,
+      count: 15,
+      countRemain: 15,
+      everyTimeGet: 5,
       name: "三等奖",
       detail: "三等奖商品",
-      id: '三等奖',
+      id: 3,
+      cardListWin: [],
+      round: 0
+    },
+    {
+      count: 30,
+      countRemain: 30,
+      everyTimeGet: 1,
+      name: "补抽",
+      detail: "补抽商品",
+      id: 4,
       cardListWin: [],
       round: 0
     }
   ], // 奖品列表
-  headerTitle: '蓝图创新工作室年度盛典',
+  headerTitle: '北京邮电大学第七届信息科技国际青年学者传邮论坛',
   currentPrize: null, // 当前抽奖的奖品
   colCount, rowCount, // table模式下行列数
   cardList, // 所有卡片的数据

@@ -5,9 +5,6 @@
           v-for="(item, index) in prizeList" :key="index"
           :class="{shine: index === currentPrizeIndex, done: index === donePrizeIndex}"
           @click="selectPrize(item, index)">
-        <div class="prize-item-left" v-if="false">
-          <img src="http://n1.itc.cn/img8/wb/recom/2016/03/02/145687903767748488.JPEG" alt="">
-        </div>
         <div class="prize-item-right">
           <div class="prize-item-title">{{ item.name }}</div>
           <div class="prize-item-name" v-if="false">{{ item.detail }}</div>

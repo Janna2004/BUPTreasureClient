@@ -19,7 +19,7 @@ const cardUserList = lotteryConfigUsersRawJson;
 // table模式下行列数
 let row = 1;
 let col = 1;
-const colCount = 7;
+const colCount = Math.sqrt(cardUserList.length).valueOf() + 2;
 cardUserList.forEach((item, i) => {
   // 每行结束 另起一行
   item.index = i;

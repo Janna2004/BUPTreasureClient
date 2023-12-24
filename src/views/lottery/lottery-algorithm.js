@@ -3,24 +3,12 @@ import axios from 'axios';
 
 
 const getRandomCard = async function(currentPrize) {
-  let prizeId = 0; //err
-
-  if(currentPrize.id === "一等奖") {
-    prizeId = 1;
-  }else if(currentPrize.id === "二等奖") {
-    prizeId = 2;
-  }else if(currentPrize.id === "三等奖") {
-    prizeId = 3;
-  }else{
-    prizeId = 0;
-  }
-
   const selectCount = currentPrize.countRemain < currentPrize.everyTimeGet ? currentPrize.countRemain : currentPrize.everyTimeGet;
 
   console.log('currentPrize', currentPrize);
-  let url = 'http://lt.t1.lllccc.top:8080/pickWeb';
+  let url = 'https://lt.t1.lllccc.top/pickWeb';
   try {
-    const pickNumUrl = url + `/pick?awardType=${prizeId}&pickNum=${selectCount}`;
+    const pickNumUrl = url + `/pick?awardType=${currentPrize.id}&pickNum=${selectCount}`;
     let selectCardList = [];
 
     // 发起请求并等待响应
