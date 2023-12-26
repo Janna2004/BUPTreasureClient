@@ -48,7 +48,7 @@ export default class Prize extends Vue {
   donePrizeIndex = null;
   async selectPrize(prize, index) {
     if (STATUS.isRun()) {
-      alert('正在抽奖中或者已经是当前奖项状态，不能切换奖项！');
+      //alert('正在抽奖中或者已经是当前奖项状态，不能切换奖项！');
       return void 0;
     }
     STATUS.setStatusRun();
