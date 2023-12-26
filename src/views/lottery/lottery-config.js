@@ -3,10 +3,10 @@ import { cardList, colCount, rowCount } from './lottery-config-users.js';
 const lotteryConfig = {
   prizeList: [
     {
-      count: 5, // 总数量
-      countRemain: 5,
-      everyTimeGet: 3,
-      name: "一等奖",
+      count: 50, // 总数量
+      countRemain: 50,
+      everyTimeGet: 1,
+      name: "抽一次",
       detail: "一等奖商品",
       // img: "",
       id: 1,
@@ -14,32 +14,12 @@ const lotteryConfig = {
       round: 0
     },
     {
-      count: 10,
-      countRemain: 10,
-      everyTimeGet: 5,
-      name: "二等奖",
+      count: 50,
+      countRemain: 50,
+      everyTimeGet: 2,
+      name: "抽两次",
       detail: "二等奖商品",
       id: 2,
-      cardListWin: [],
-      round: 0
-    },
-    {
-      count: 15,
-      countRemain: 15,
-      everyTimeGet: 5,
-      name: "三等奖",
-      detail: "三等奖商品",
-      id: 3,
-      cardListWin: [],
-      round: 0
-    },
-    {
-      count: 30,
-      countRemain: 30,
-      everyTimeGet: 1,
-      name: "补抽",
-      detail: "补抽商品",
-      id: 4,
       cardListWin: [],
       round: 0
     }

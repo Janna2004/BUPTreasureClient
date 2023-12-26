@@ -34,20 +34,20 @@
   cursor: pointer;
   //margin-bottom: 40px;
   &:last-child {
-    width: 40%;
+    //width: 40%;
     margin-bottom: 0;
-    .progress {
-      display: none;
-    }
-    .prize-item-count-text {
-      display: none;
-    }
-    .prize-item-title {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 15px;
-      letter-spacing: 3px;
-    }
+    //.progress {
+    //  display: none;
+    //}
+    //.prize-item-count-text {
+    //  display: none;
+    //}
+    //.prize-item-title {
+    //  font-size: 20px;
+    //  font-weight: bold;
+    //  margin-top: 15px;
+    //  letter-spacing: 3px;
+    //}
   }
 
   .prize-item-right {
@@ -59,7 +59,7 @@
     .prize-item-title {
       font-size: 20px;
       font-weight: bold;
-      margin-bottom: 8px;
+      margin-top: 15px;
       letter-spacing: 3px;
     }
     .prize-item-name {
@@ -79,6 +79,7 @@
       align-items: center;
       height: 10px;
       .prize-item-count-text {
+        display: none;
         width: 100%;
         text-align: center;
         color: #fff;
@@ -90,6 +91,7 @@
       }
     }
     .progress {
+      display: none;
       position: absolute;
       background: rgba(0, 0, 0, 0.5);
       padding: 1px;
