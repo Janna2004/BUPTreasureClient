@@ -264,11 +264,11 @@ button {
 
 .show-all-win-user {
   position: fixed;
-  width: calc(100vw - 400px);
-  height: calc(100vh - 50px - 60px);
-  left: 200px;
-  top: calc(50px + 30px);
-  background-color: rgba(0, 0, 0, 0.9);
+  width: calc(100vw - 700px);
+  height: calc(100vh - 80px - 200px);
+  left: 350px;
+  top: calc(50px + 100px);
+  background-color: rgba(223, 223, 223, 0.9);
   border-radius: 2%;
   z-index: 999;
   display: flex;
@@ -276,7 +276,7 @@ button {
   align-items: center;
   justify-content: space-around;
   border: 1px solid rgba(0, 127, 127, 0.314);
-  color: #fff;
+  color: #292e32;;
 
   .close-btn {
     position: absolute;
@@ -285,7 +285,7 @@ button {
     font-size: 30px;
     cursor: pointer;
     display: block;
-    color: rgba(255, 255, 255, .7);
+    color: #122040a0;
   }
 
   .prize-win-item {
