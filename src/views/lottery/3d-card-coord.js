@@ -32,7 +32,7 @@ const targetsCoord = function ({targets, objects, cardSize} = defaultObj) {
 
     const object = new THREE.Object3D();
 
-    object.position.setFromSphericalCoords( 800, phi, theta );
+    object.position.setFromSphericalCoords( 600, phi, theta );
 
     vector.copy( object.position ).multiplyScalar( 2 );
 

@@ -1,6 +1,6 @@
 .element {
   width: 140px;
-  height: 180px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@
 }
 .element.prize.prize {
   transition: background-color 1.5s ease-in 0.3s;
-  background-color: #eed46b !important;
+  background-color: #f4b32c !important;
   box-shadow: 0 0 12px rgba(222, 231, 229, 0.95);
 }
 .element.prize .symbol {
@@ -22,6 +22,7 @@
 }
 
 .element .symbol {
+  text-shadow:#f4b32c ;
   position: relative;
   font-size: 30px;
   top: 0;

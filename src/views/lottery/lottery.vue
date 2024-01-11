@@ -8,7 +8,7 @@
       <div class="placeholder"></div>
         <div class="content-title">
           <p class="first-title">邮奖</p>
-          <p class="second-title">总是邮人抽到奖</p>
+          <p class="second-title">龙年大吉 龙行龘龘</p>
         </div>
         <Prize/>
       </div>
@@ -29,19 +29,19 @@
   background-repeat: no-repeat;
   background-position: top center;
 }
-.lottery-header {
-  flex: none;
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.696);
-  font-size: 26px;
-  letter-spacing: 5px;
-  font-weight: bold;
-  //position: fixed;
-}
+// .lottery-header {
+//   flex: none;
+//   height: 0px;
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   color: rgba(255, 255, 255, 0.696);
+//   font-size: 26px;
+//   letter-spacing: 5px;
+//   font-weight: bold;
+//   //position: fixed;
+// }
 .lottery-content {
   height: 100%;
   flex: 1;
@@ -62,19 +62,19 @@
   }
 }
 .left-side{
-  flex: 3;
+  flex: 2;
   display: flex;
   flex-direction: column;
   margin-right: 50px;
-  margin-left: 50px;
-  margin-bottom: 70px;
+  margin-left: 90px;
+  margin-bottom: 110px;
 }
 .placeholder {
     height: 30%;
     width: 100%;
   }
 .first-title {
-  font-size: 90px;
+  font-size: 80px;
   height: 50px;
   font-weight: bold;
   color: #fff;
@@ -82,7 +82,7 @@
   letter-spacing: 15px;
 }
 .second-title {
-  font-size: 50px;
+  font-size: 45px;
   color: #fff;
   letter-spacing: 8px;
 }

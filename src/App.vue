@@ -18,7 +18,7 @@ html, body{
   width: 100%;
 }
 #app {
-  color: #2c3e50;
+  color: #ffffff;
   height: 100%;
   width: 100%;
 }

@@ -41,7 +41,7 @@ a {
   font-size: 60px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.97);
-  text-shadow: 0 0 10px rgba(9, 55, 133, 0.95);
+  text-shadow: 0 0 10px #f4b32c;
 }
 
 .element .details {
@@ -68,5 +68,5 @@ button:hover {
 
 button:active {
   color: #000000;
-  background-color: rgba(0,255,255,0.75);
+  background-color: rgba(255, 213, 0, 0.75);
 }

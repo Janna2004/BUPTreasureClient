@@ -10,7 +10,7 @@ module.exports = {
     },
     chainWebpack: config => {
         config.plugin('html').tap(args => {
-            args[0].title = '【GitHub】2077年终大抽奖';
+            args[0].title = '邮奖';
             return args;
         });
     },

@@ -11,7 +11,7 @@ function cardFlyAnimation(cardIndexList) {
     const locates = [];
     const duration = 600;
 
-    const selectRowCount = 1; // 行数 默认一行
+    const selectRowCount = cardIndexList.length<5?1:cardIndexList.length/5; // 行数 默认一行
     const cardPadding = 30;
     const objectLength = selectObject.length;
     const canvasSize = {
