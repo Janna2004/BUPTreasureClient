@@ -3,9 +3,9 @@ import { cardList, colCount, rowCount } from './lottery-config-users.js';
 const lotteryConfig = {
   prizeList: [
     {
-      count: 4, // 总数量
-      countRemain: 4,
-      everyTimeGet: 2,
+      count: 8, // 总数量
+      countRemain: 8,
+      everyTimeGet: 4,
       name: "特等奖",
       detail: "特等奖商品",
       // img: "",
