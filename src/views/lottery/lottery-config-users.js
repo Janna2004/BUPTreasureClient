@@ -2,7 +2,7 @@ let lotteryConfigUsersRawJson;
 
 try {
   // 尝试导入JSON文件
-  lotteryConfigUsersRawJson = require('./../../buffer/lottery-config-users.json');
+  lotteryConfigUsersRawJson = require('/public/buffer/lottery-config-users.json');
   console.log('lotteryConfigUsersRawJson', lotteryConfigUsersRawJson);
 } catch (error) {
   // 发生错误时，输出错误信息
@@ -10,7 +10,8 @@ try {
 
   // 刷新页面
   setTimeout(() => {
-    window.location.reload();
+    localStorage.removeItem('___lottery___')
+    location.reload();
   }, 2000);
 }
 

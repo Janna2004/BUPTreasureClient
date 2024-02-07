@@ -1,24 +1,37 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
+const Lottery = () => import('@/views/lottery/lottery.vue')
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/',
-    name: 'Home',
-    // redirect: '/lottery-3d'
-    component: () => import(/* webpackChunkName: "lottery" */ "../views/lottery/lottery.vue")
+    path: '/dist/',
+    name: 'ProductHome',
+    redirect: '/lottery',
+    component: Lottery
   },
   {
-    path: "/lottery-3d",
-    name: "lottery-3d",
+    path: '/dist/lottery',
+    name: 'ProductLottery',
+    component: Lottery
+  },
+  {
+    path: '/',
+    name: 'Home',
+    redirect: '/lottery',
+    component: Lottery
+  },
+  {
+    path: "/lottery",
+    name: "lottery",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "lottery-3d" */ "../views/lottery/lottery.vue")
+    component: Lottery
   }
 ]
+
 
 const router = new VueRouter({
   mode: 'history',

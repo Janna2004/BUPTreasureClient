@@ -1,15 +1,16 @@
 import lotteryConfig from './lottery-config.js';
-const { cardList, colCount, rowCount } = lotteryConfig;
 import {
   objects, targets, cardSize, // 3d 变量
 } from './3d-core.js'
 
+const { cardList, colCount, rowCount } = lotteryConfig;
+const cardNum = cardList.length;
 const THREE = window.THREE;
 
 const defaultObj = {targets, objects, cardSize};
 const targetsCoord = function ({targets, objects, cardSize} = defaultObj) {
   // table 平铺节点
-  for ( let i = 0, l = objects.length; i < l; i ++ ) {
+  for ( let i = 0; i < cardNum; i ++ ) {
     const currentCardData = cardList[i];
     // if (!currentCardData) {
     //   console.log(currentCardData, cardList);
@@ -26,9 +27,9 @@ const targetsCoord = function ({targets, objects, cardSize} = defaultObj) {
   // sphere 球体
   const vector = new THREE.Vector3();
 
-  for ( let i = 0, l = objects.length; i < l; i ++ ) {
-    const phi = Math.acos( - 1 + ( 2 * i ) / l );
-    const theta = Math.sqrt( l * Math.PI ) * phi;
+  for ( let i = 0; i < cardNum; i ++ ) {
+    const phi = Math.acos( - 1 + ( 2 * i ) / cardNum );
+    const theta = Math.sqrt( cardNum * Math.PI ) * phi;
 
     const object = new THREE.Object3D();
 
@@ -43,7 +44,7 @@ const targetsCoord = function ({targets, objects, cardSize} = defaultObj) {
   }
 
   // helix 螺旋
-  for ( let i = 0, l = objects.length; i < l; i ++ ) {
+  for ( let i = 0; i < cardNum; i ++ ) {
 
     const theta = i * 0.175 + Math.PI;
     const y = - ( i * 8 ) + 450;
@@ -63,7 +64,7 @@ const targetsCoord = function ({targets, objects, cardSize} = defaultObj) {
   }
 
   // grid 网格
-  for ( let i = 0; i < objects.length; i ++ ) {
+  for ( let i = 0; i < cardNum; i ++ ) {
 
     const object = new THREE.Object3D();
 

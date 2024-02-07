@@ -178,6 +178,7 @@ export default class Prize extends Vue {
       alert('抽奖正在运行中，请等待后再操作！')
     }
   }
+  
   async refreshTable() {
     lotteryConfig.clearLocalStorage();
     location.reload();
