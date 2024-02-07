@@ -3,5 +3,6 @@ FROM node:18.16.0
 # Create app directory
 WORKDIR /app
 
-# Install app dependencies
-COPY dist /app/dist
+# Copy project files
+COPY dist/ /app/dist
+
