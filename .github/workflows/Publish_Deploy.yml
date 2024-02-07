@@ -3,13 +3,10 @@ name: Publish Docker Image & Deploy to Remote Server
 on:
   push:
     branches: [master]
-    # 仅当main.go文件或internal文件夹内容发生变化时才触发
     paths:
-      - 'main.go'
-      - 'internal/**'
-      - 'go.mod'
-      - 'go.sum'
+      - 'src/**'
       - '.github/workflows/**'
+      - 'Dockerfile*'
   release:
     # 表示在创建新的 Release 时触发
     types: [created]
@@ -43,12 +40,12 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile
+          file: ./Dockerfile.prod
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/buptreasure-server:${{ steps.date.outputs.today }}
-            ${{ secrets.DOCKER_USERNAME }}/buptreasure-server:latest
+            ${{ secrets.DOCKER_USERNAME }}/buptreasure-client:${{ steps.date.outputs.today }}
+            ${{ secrets.DOCKER_USERNAME }}/buptreasure-client:latest
   deploy:
     name: Deploy to Remote Server
     needs: build_docker
@@ -63,4 +60,4 @@ jobs:
           key: ${{ secrets.PR_KEY }}
           script: |
             cd /home/lantu/buptreasure
-            docker-compose up -d --force-recreate buptreasure-server
+            docker-compose up -d --force-recreate buptreasure-client
