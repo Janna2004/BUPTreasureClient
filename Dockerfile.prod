@@ -4,4 +4,4 @@ FROM node:18.16.0
 WORKDIR /app
 
 # Install app dependencies
-COPY /dist/ /app/dist/
+COPY dist /app/dist/
