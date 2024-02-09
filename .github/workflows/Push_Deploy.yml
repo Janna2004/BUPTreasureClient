@@ -68,7 +68,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.PR_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh -s 
+        ssh -o StrictHostKeyChecking=no -tt ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
         sudo su
         ${{ secrets.SUDO_PASSWORD }}
         cd /home/${{ secrets.REMOTE_USER }}/buptreasure
