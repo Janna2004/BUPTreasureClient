@@ -63,17 +63,19 @@ jobs:
         source: "dist/"
         target: "/home/${{ secrets.REMOTE_USER }}/buptreasure/dist"
         overwrite: true # Overwrite the files at the target
-    - name: Connect to Server and Remove dist
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        password: ${{ secrets.SUDO_PASSWORD }}
-        key: ${{ secrets.PR_KEY }}
-        script: |
-          sudo su
-          cd /home/${{ secrets.REMOTE_USER }}/buptreasure
-          rm -rf /home/nginx/html/buptreasure/dist
-          mv dist /home/nginx/html/buptreasure/dist
-          cd /home/nginx/html/buptreasure/dist
-          ls
+    - name: Execute SSH command
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.PR_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh -o StrictHostKeyChecking=no -tt ${{ secrets.REMOTE_USER }}@ ${{ secrets.REMOTE_HOST }} << EOF
+        sudo su
+        cd /home/${{ secrets.REMOTE_USER }}/buptreasure
+        rm -rf /home/nginx/html/buptreasure/dist
+        mv dist /home/nginx/html/buptreasure/dist
+        cd /home/nginx/html/buptreasure/dist
+        ls
+        exit
+        EOF
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.PR_KEY }}
