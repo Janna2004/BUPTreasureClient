@@ -64,4 +64,3 @@ jobs:
         target: "/home/nginx/html/buptreasure/dist"
         rm: true # Remove the files after transfer
         overwrite: true # Overwrite the files at the target
-        sftp: true # Use SFTP instead of SCP
