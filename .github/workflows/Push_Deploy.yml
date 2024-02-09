@@ -15,8 +15,6 @@ jobs:
   npm_build:
     name: Install Node Modules and Build dist
     runs-on: ubuntu-20.04
-    env:
-      NODE_OPTIONS: --openssl-legacy-provider
     steps:
       - uses: actions/checkout@v2
         # 检出代码
@@ -28,10 +26,14 @@ jobs:
           # 设置Node.js版本
   
       - name: Install dependencies
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
         run: npm install
         # 安装项目依赖
   
       - name: Build
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
         run: npm run build
         # 构建项目，生成dist目录
       - name: Upload Artifacts
