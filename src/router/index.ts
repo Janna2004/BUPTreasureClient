@@ -6,28 +6,14 @@ Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
-    path: '/dist/',
-    name: 'ProductHome',
-    redirect: '/lottery',
-    component: Lottery
-  },
-  {
-    path: '/dist/lottery',
-    name: 'ProductLottery',
-    component: Lottery
-  },
-  {
     path: '/',
     name: 'Home',
-    redirect: '/lottery',
+    redirect: '/buptreasure',
     component: Lottery
   },
   {
-    path: "/lottery",
-    name: "lottery",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/buptreasure',
+    name: 'Lottery',
     component: Lottery
   }
 ]

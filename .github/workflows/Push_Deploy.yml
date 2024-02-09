@@ -1,0 +1,59 @@
+name: Deploy to Remote Server
+
+on:
+  push:
+    branches: [master, dev]
+    paths:
+      - 'src/**'
+      - '.github/workflows/**'
+      - 'Dockerfile*'
+  release:
+    # 表示在创建新的 Release 时触发
+    types: [created]
+
+jobs:
+  npm_build:
+    name: Install Node Modules and Build dist
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        # 检出代码
+  
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18.16.0'
+          # 设置Node.js版本
+  
+      - name: Install dependencies
+        run: npm install
+        # 安装项目依赖
+  
+      - name: Build
+        run: npm run build
+        # 构建项目，生成dist目录
+
+  deploy:
+    name: Deploy to Remote Server
+    needs: npm_build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Deploy to Remote Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          password: ${{ secrets.SUDO_PASSWORD }}
+          key: ${{ secrets.PR_KEY }}
+          script: |
+            cd /home/nginx/html/buptreasure
+            rm -rf dist
+      - name: Deploy to Server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          password: ${{ secrets.SUDO_PASSWORD }}
+          key: ${{ secrets.PR_KEY }}
+          source: "dist/"
+          target: "/home/nginx/html/buptreasure/dist"

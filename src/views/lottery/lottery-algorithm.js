@@ -6,7 +6,7 @@ const getRandomCard = async function(currentPrize) {
   const selectCount = currentPrize.countRemain < currentPrize.everyTimeGet ? currentPrize.countRemain : currentPrize.everyTimeGet;
 
   console.log('currentPrize', currentPrize);
-  let url = 'https://lt.t1.lllccc.top/pickWeb';
+  let url = 'https://lt.t1.lllccc.top/buptreasure/api/pickWeb';
   try {
     const pickNumUrl = url + `/pick?awardType=${currentPrize.id}&pickNum=${selectCount}`;
     let selectCardList = [];
