@@ -2,7 +2,7 @@ name: Deploy to Remote Server
 
 on:
   push:
-    branches: [master]
+    branches: [master, dev]
     paths:
       - 'src/**'
       - '.github/workflows/**'
@@ -12,10 +12,48 @@ on:
     types: [created]
 
 jobs:
-  deploy-and-build:
-    runs-on: ubuntu-latest
+  npm_build:
+    name: Install Node Modules and Build dist
+    runs-on: ubuntu-20.04
     steps:
-    - name: SSH and Build on Server
+      - uses: actions/checkout@v2
+        # 检出代码
+  
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '18.16.0'
+          # 设置Node.js版本
+  
+      - name: Install dependencies
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+        run: npm install
+        # 安装项目依赖
+  
+      - name: Build
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+        run: npm run build
+        # 构建项目，生成dist目录
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist/
+        # 上传构建结果以供部署job使用
+  
+  deploy:
+    needs: npm_build
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Download Artifacts
+      uses: actions/download-artifact@v2
+      with:
+        name: dist
+        path: dist
+      # 下载构建结果
+    - name: Connect to Server and Remove dist
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.REMOTE_HOST }}
@@ -25,10 +63,14 @@ jobs:
         script: |
           cd /home/nginx/html/buptreasure
           rm -rf dist
-          git clone https://github.com/A-CS99/BUPTreasureClient.git
-          cd BUPTreasureClient
-          npm install
-          npm run build
-          mv dist /home/nginx/html/buptreasure/
-          cd /home/nginx/html/buptreasure
-          rm -rf BUPTreasureClient
+      # 连接到服务器并删除原有的dist目录
+    - name: Deploy to Server
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        password: ${{ secrets.SUDO_PASSWORD }}
+        key: ${{ secrets.PR_KEY }}
+        source: "dist/"
+        target: "/home/nginx/html/buptreasure/dist"
+        overwrite: true # Overwrite the files at the target
