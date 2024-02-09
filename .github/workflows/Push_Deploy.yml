@@ -53,17 +53,6 @@ jobs:
         name: dist
         path: dist
       # 下载构建结果
-    - name: Connect to Server and Remove dist
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        password: ${{ secrets.SUDO_PASSWORD }}
-        key: ${{ secrets.PR_KEY }}
-        script: |
-          cd /home/nginx/html/buptreasure
-          rm -rf dist
-      # 连接到服务器并删除原有的dist目录
     - name: Deploy to Server
       uses: appleboy/scp-action@master
       with:
@@ -72,5 +61,19 @@ jobs:
         password: ${{ secrets.SUDO_PASSWORD }}
         key: ${{ secrets.PR_KEY }}
         source: "dist/"
-        target: "/home/nginx/html/buptreasure/dist"
+        target: "/home/${{ secrets.REMOTE_USER }}/buptreasure/dist"
         overwrite: true # Overwrite the files at the target
+    - name: Connect to Server and Remove dist
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        password: ${{ secrets.SUDO_PASSWORD }}
+        key: ${{ secrets.PR_KEY }}
+        script: |
+          sudo su
+          cd /home/${{ secrets.REMOTE_USER }}/buptreasure
+          rm -rf /home/nginx/html/buptreasure/dist
+          mv dist /home/nginx/html/buptreasure/dist
+          cd /home/nginx/html/buptreasure/dist
+          ls
