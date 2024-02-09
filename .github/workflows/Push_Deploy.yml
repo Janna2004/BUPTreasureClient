@@ -58,7 +58,6 @@ jobs:
       with:
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
-        password: ${{ secrets.SUDO_PASSWORD }}
         key: ${{ secrets.PR_KEY }}
         source: "dist/"
         target: "/home/${{ secrets.REMOTE_USER }}/buptreasure/dist"
@@ -69,8 +68,9 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{ secrets.PR_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh -o StrictHostKeyChecking=no -tt ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} << 'EOF'
+        ssh -s 
         sudo su
+        ${{ secrets.SUDO_PASSWORD }}
         cd /home/${{ secrets.REMOTE_USER }}/buptreasure
         rm -rf /home/nginx/html/buptreasure/dist
         mv dist /home/nginx/html/buptreasure/dist
