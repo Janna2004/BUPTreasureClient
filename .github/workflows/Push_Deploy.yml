@@ -69,9 +69,8 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.PR_KEY }}
         script: |
-          sudo su
           cd /home/${{ secrets.REMOTE_USER }}/buptreasure
-          rm -rf /home/nginx/html/buptreasure/dist
-          mv dist /home/nginx/html/buptreasure/dist
+          sudo rm -rf /home/nginx/html/buptreasure/dist
+          sudo mv dist /home/nginx/html/buptreasure/dist
           cd /home/nginx/html/buptreasure/dist
           ls
