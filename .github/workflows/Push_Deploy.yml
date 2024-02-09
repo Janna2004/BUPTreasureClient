@@ -60,7 +60,7 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.PR_KEY }}
         source: "dist/"
-        target: "/home/${{ secrets.REMOTE_USER }}/buptreasure/dist"
+        target: "/home/${{ secrets.REMOTE_USER }}/buptreasure"
         overwrite: true # Overwrite the files at the target
     - name: Connect to Server and Remove dist
       uses: appleboy/ssh-action@master
@@ -71,6 +71,6 @@ jobs:
         script: |
           cd /home/${{ secrets.REMOTE_USER }}/buptreasure
           sudo rm -rf /home/nginx/html/buptreasure/dist
-          sudo mv dist /home/nginx/html/buptreasure/
+          sudo mv dist /home/nginx/html/buptreasure/dist
           cd /home/nginx/html/buptreasure/dist
           ls
