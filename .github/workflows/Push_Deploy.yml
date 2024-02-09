@@ -71,6 +71,6 @@ jobs:
         script: |
           cd /home/${{ secrets.REMOTE_USER }}/buptreasure
           sudo rm -rf /home/nginx/html/buptreasure/dist
-          sudo mv dist /home/nginx/html/buptreasure/dist
+          sudo mv dist /home/nginx/html/buptreasure/
           cd /home/nginx/html/buptreasure/dist
           ls
